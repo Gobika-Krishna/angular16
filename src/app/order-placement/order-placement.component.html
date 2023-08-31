@@ -152,32 +152,29 @@
                         </tbody>
                     </table>
                     <br>
+
                     <div>
                         <label>
-                            <input type="radio" name="dbt" value="dbt" checked> Direct Bank Transfer
-                        </label>
-                    </div>
-                    <p>
-                        Make your payment directly into our bank account. Please use your Order ID as the payment
-                        reference.
-                        Your order will not be shipped until the funds have cleared in our account.
-                    </p>
-                    <div>
-                        <label>
-                            <input type="radio" name="dbt" value="cd"> Cash on Delivery
+                            <input type="radio" name="dbt" value="cd" (change)="onPaymentMethodChange('cd')"> Cash on
+                            Delivery
                         </label>
                     </div>
                     <div>
                         <label>
-                            <input type="radio" name="dbt" value="cd"> Paypal
+                            <input type="radio" name="dbt" value="card" (change)="onPaymentMethodChange('card')"
+                                #cardRadio> Card
                             <span>
                                 <img src="https://www.logolynx.com/images/logolynx/c3/c36093ca9fb6c250f74d319550acac4d.jpeg"
                                     alt="" width="50">
                             </span>
                         </label>
                     </div>
-                    <button class="btn btn-success custom-btn" type="submit" [disabled]="!orderForm.valid">Place
-                        Order</button>
+
+                    <button *ngIf="paymentMethod === 'cd'" class="btn btn-success custom-btn" type="submit"
+                        [disabled]="!orderForm.valid">Place Order</button>
+                    <button *ngIf="paymentMethod === 'card'" class="btn btn-success custom-btn" type="submit"
+                        [disabled]="!orderForm.valid">Checkout</button>
+
                 </div>
             </div>
 
