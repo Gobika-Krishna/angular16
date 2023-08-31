@@ -1,0 +1,18 @@
+{
+    "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
+    "parser": "@typescript-eslint/parser",
+    "plugins": ["@typescript-eslint"],
+    "rules": {
+        "@typescript-eslint/no-explicit-any": "off"
+      }
+  }
+  
+
+// command to perform eslint for all ts files
+// npx eslint "src/**/*.ts"
+
+// command to run stylelint for css files
+// npx stylelint "**/*.css"
+// stylelint "src/**/*.css"
+// npx stylelint "**/*.css" --fix
+

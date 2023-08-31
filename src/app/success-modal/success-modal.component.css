@@ -1,0 +1,39 @@
+.success-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 290px;
+    max-width: 80%;
+    height: 250px;
+    background-color: #fafafa;
+    border-radius: 3px;
+    box-shadow: 0 12px 36px 16px rgb(0 0 0 / 24%)
+  }
+
+  .title-text {
+    display: inline-block;
+    height: 35px;
+    line-height: 52px;
+    margin-left: 72px;
+    margin-top: 22px;
+  }
+
+  .modal-content {
+    padding: 20px;
+    border-radius: 5px;
+    border: none;
+    text-align: center;
+}
+
+.modal-header {
+    border-bottom: none;   
+    position: relative;
+}
+
+.modal-footer {
+    border: none;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 13px;
+}	

@@ -1,0 +1,187 @@
+<div class="container-fluid custom-container">
+    <div class="row" *ngIf="!modalOpen">
+        <div class="col-xs-12 text-center">
+            <h1>Order Summary</h1>
+        </div>
+
+    </div>
+    <app-modal [isOpen]="modalOpen"></app-modal>
+    <form (ngSubmit)="onSubmit(orderForm)" #orderForm="ngForm" *ngIf="!modalOpen">
+        <div class="row">
+            <div class="col-xs-12 col-md-4 col-md-offset-2">
+
+                <div class="row">
+                    <div class="col-md-6 form-group custom-col1">
+                        <label for="name">First Name</label>
+                        <input type="text" id="name" class="form-control" ngModel name="name" required
+                            #firstName="ngModel" />
+                        <div class="error-message" *ngIf="firstName.touched && firstName.invalid">
+                            <div *ngIf="firstName.errors.required">
+                                Please enter a valid First Name.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 form-group custom-col2">
+                        <label for="lname">Last Name</label>
+                        <input type="text" id="lname" class="form-control" ngModel name="lname" required
+                            #lastName="ngModel" />
+                        <div class="error-message" *ngIf="lastName.touched && lastName.invalid">
+                            <div *ngIf="lastName.errors.required">
+                                Please enter a valid Last Name.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row form-group">
+                    <label for="email">E-Mail</label>
+                    <input type="email" id="email" class="form-control" ngModel name="email" required email
+                        #emailInput="ngModel" />
+                    <div class="error-message" *ngIf="emailInput.touched && emailInput.invalid">
+                        <div *ngIf="emailInput.errors.required">
+                            Please enter a valid Email Address.
+                        </div>
+                        <div class="error-message" *ngIf="emailInput.errors.email">
+                            Please enter a valid Email Address.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row form-group">
+                    <label for="phone">Phone number</label>
+                    <input type="tel" id="phone" class="form-control" ngModel name="phone" required
+                        #phoneInput="ngModel" pattern="[0-9]{10}" placeholder="(123) 456-7890" />
+                    <div class="error-message" *ngIf="phoneInput.touched && phoneInput.invalid">
+                        <div *ngIf="phoneInput.errors.required">
+                            Please enter a phone number.
+                        </div>
+                        <div *ngIf="phoneInput.errors.pattern">
+                            Please enter a valid 10-digit phone number.
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row form-group">
+                    <!-- street address -->
+                    <label for="address">Street Address</label>
+                    <input type="text" name="address" id="address" class="form-control" ngModel required
+                        #address="ngModel" />
+                    <div class="error-message" *ngIf="address.touched && address.invalid">
+                        <div *ngIf="address.errors.required">
+                            Please enter a valid Street Address.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <!-- city -->
+                    <div class="col-md-6 form-group custom-col1">
+                        <label for="city">City</label>
+                        <input type="text" name="city" id="city" class="form-control" ngModel required
+                            #cityInput="ngModel" />
+                        <div class="error-message" *ngIf="cityInput.touched && cityInput.invalid">
+                            <div *ngIf="cityInput.errors.required">
+                                Please enter a valid city.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- street address -->
+                    <div class="col-md-6 form-group custom-col2">
+                        <label for="state">State/Province</label>
+                        <input type="text" name="state" id="state" class="form-control" ngModel required
+                            #stateInput="ngModel" />
+                        <div class="error-message" *ngIf="stateInput.touched && stateInput.invalid">
+                            <div *ngIf="stateInput.errors.required">
+                                Please enter a valid State/Province.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <!-- country name -->
+                    <div class="col-md-6 form-group custom-col1">
+                        <label for="country">Country</label>
+                        <input type="text" name="country" id="country" class="form-control" ngModel required
+                            #countryInput="ngModel" />
+                        <div class="error-message" *ngIf="countryInput.touched && countryInput.invalid">
+                            <div *ngIf="countryInput.errors.required">
+                                Please enter a valid Country.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- postal code -->
+                    <div class="col-md-6 form-group custom-col2">
+                        <label for="post">Post/Zip Code</label>
+                        <input type="text" pattern="[0-9]{5}" name="post" id="post" class="form-control" ngModel
+                            required #postInput="ngModel" placeholder="Enter your Post/Zip Code" />
+                        <div class="error-message" *ngIf="postInput.touched && postInput.invalid">
+                            <div *ngIf="postInput.errors.required">
+                                Please enter a valid Post/Zip Code.
+                            </div>
+                            <div *ngIf="postInput.errors.pattern">
+                                Please enter a valid 5-digit postcode.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- order summary -->
+            <div class="col-xs-12 col-md-4">
+                <div class="your-order">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th colspan="2">Your Order</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Product Quantity</td>
+                                <td>{{ (orderService.orderValue | async).quantity }}</td>
+                            </tr>
+                            <tr>
+                                <td>Subtotal</td>
+                                <td>{{ (orderService.orderValue | async).price | number:'1.2-2' }}</td>
+                            </tr>
+                            <tr>
+                                <td>Shipping</td>
+                                <td>Free shipping</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br>
+                    <div>
+                        <label>
+                            <input type="radio" name="dbt" value="dbt" checked> Direct Bank Transfer
+                        </label>
+                    </div>
+                    <p>
+                        Make your payment directly into our bank account. Please use your Order ID as the payment
+                        reference.
+                        Your order will not be shipped until the funds have cleared in our account.
+                    </p>
+                    <div>
+                        <label>
+                            <input type="radio" name="dbt" value="cd"> Cash on Delivery
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            <input type="radio" name="dbt" value="cd"> Paypal
+                            <span>
+                                <img src="https://www.logolynx.com/images/logolynx/c3/c36093ca9fb6c250f74d319550acac4d.jpeg"
+                                    alt="" width="50">
+                            </span>
+                        </label>
+                    </div>
+                    <button class="btn btn-success custom-btn" type="submit" [disabled]="!orderForm.valid">Place
+                        Order</button>
+                </div>
+            </div>
+
+        </div>
+    </form>
+</div>
+<!-- </div> -->

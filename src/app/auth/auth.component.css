@@ -1,0 +1,18 @@
+.custom-container {
+	display: table;
+	height: 100%;
+	font-family: 'Open Sans', sans-serif;
+}
+
+div.content {
+	position: absolute;
+	top: 47%;
+	width: inherit;
+	transform: translateY(-50%);
+}
+
+.alert-danger{
+	margin-top: 5px;
+}
+
+

@@ -1,0 +1,29 @@
+<div class="listing-section container-fluid">
+    <form #productForm="ngForm" (ngSubmit)="onSubmit(productForm)">
+        <div class="row">
+            <div class="col-xs-4 col-xs-offset-4 pull-right">
+                <button type="submit" class="btn btn-success" [disabled]="!hasSelectedProducts()">Checkout</button>
+            </div>
+        </div>
+        <div class="product col-xs-12 col-md-3" *ngFor="let product of products; let i = index">
+            <div class="image-box">
+                <img [src]="product.url" alt="product.name" class="images img-responsive">
+            </div>
+            <div class="text-box">
+                <h2 class="item">{{product.name}}</h2>
+                <h3 class="price">{{product.prize}}</h3>
+                <p class="description">{{product.description}}</p>
+                <div class="form-group">
+                    <label [for]="'product'+product.id">Quantity:</label>
+                    <input type="number" class="form-control" [name]="'product'+product.id" [id]="'product'+product.id"
+                        ngModel min="0" value="0" [(ngModel)]="product.quantity"
+                        (ngModelChange)="updateAddToCartText(product)">
+                </div>
+                <button class="btn btn-success" type="button" [name]="'btn-' +product.id" [id]="'btn-' +product.id"
+                    (click)="addtoCart(product.id, i)"
+                    [disabled]="product.addtoCartText === 'Added to Cart'">{{product.addtoCartText}}</button>
+            </div>
+        </div>
+
+    </form>
+</div>

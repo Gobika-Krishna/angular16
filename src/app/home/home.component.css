@@ -1,0 +1,98 @@
+
+.custom-container{
+    margin-top: 20px;
+}
+
+header.carousel{
+    height:85%
+}
+
+header.carousel .item{
+    height:100%
+}
+
+.error-404{
+    font-size:100px
+}
+
+@media (width <=767px){
+    header.carousel .carousel{
+        height:50%
+    }
+}
+
+.sectiona{
+    background:url("../../assets/images/food-3270461_1280.jpg");
+    width:100%;
+    background-attachment:fixed
+}
+
+.sectionb{
+    background:#d0d0d0;
+    width:100%
+}
+
+.facontainer{
+    width:auto;
+    text-align:center;
+    padding:20px;
+    position:relative
+}
+
+.facontainer a{
+    color:#000;
+    transition:all .2s ease
+}
+
+.facontainer a:hover{
+    color:#87d0b0;
+    transition:all .2s ease
+}
+
+.facontainer h2{
+    text-align:center;
+    line-height:60px;
+    font-size:56px;
+    margin-bottom:20px;
+    letter-spacing:-2px;
+    color:#000;
+    font-family:Roboto,sans-serif
+}
+
+.facontainer p{
+    color:#000;
+    text-align:center;
+    font-size:18px;
+    width:80%;
+    margin:20px auto;
+    line-height:24px;
+    font-family: Roboto, sans-serif;
+
+}
+
+#owl-demo{
+    background:#fff
+}
+
+#owl-demo .item{
+    display:block;
+    padding:54px 0;
+    margin:5px;
+    color:#000;
+    border-radius:3px;
+    text-align:center
+}
+
+#owl-demo h2{
+    font:600 24px/28px "Open Sans",sans-serif;
+    color:#99bf38
+}
+
+#owl-demo p{
+    font:italic 300 24px/28px "Open Sans",sans-serif;
+    color:#2b3a42
+}
+
+.home-conatiner {
+    margin-top: -21px;
+}

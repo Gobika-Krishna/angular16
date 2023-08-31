@@ -1,0 +1,52 @@
+#recipe-detail-short-desc{
+  font-family: Inder, sans-serif;
+  line-height: 28px;
+  margin-bottom: 15px;
+  color: #666;
+}
+
+#recipe-detail-name {
+  font-family: "Droid serif", serif;
+  font-size: 36px;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 44px;
+  margin: 0 0 12px;
+  text-align: center;
+  color: #b48608;
+}
+
+#recipe-detail-desc {
+  color: #4c4a37;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 15px;
+  line-height: 32px;
+}
+
+#recipe-detail-ingredient {
+  color: #b48608;
+  font-family: "Droid Sans", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 24px;
+  margin: 0 0 14px;
+  background-color: thistle;
+}
+
+.recipe-list-making {
+  color: #7c795d;
+  font-family: Trocchi, serif;
+  font-size: 45px;
+  font-weight: normal;
+  line-height: 48px;
+  margin-top: 15px;
+}
+
+.recipe-list-ing {
+  margin-bottom: 15px;
+  color: #7c795d;
+  font-family: Trocchi, serif;
+  font-size: 45px;
+  font-weight: normal;
+  line-height: 48px;
+}

@@ -1,0 +1,163 @@
+.custom-container{
+  width: 100%;
+  background-color: #f6f6f6;
+  margin-top: -20px;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.your-order{
+  margin-top: 15px;
+  height: 620px;
+  padding: 20px;
+  border: 1px solid #dadada;
+}
+
+table{
+  margin: 0;
+  padding: 0;
+}
+
+th{
+  border-bottom: 1px solid #dadada;
+  padding: 10px 0;
+}
+
+tr>td:nth-child(1){
+  text-align: left;
+  color: #2d2d2a;
+}
+
+tr>td:nth-child(2){
+  text-align: right;
+  color: #ff5e14;
+}
+
+td{
+  border-bottom: 1px solid #dadada;
+  padding: 25px 25px 25px 0;
+}
+
+p{
+  display: block;
+  color: #888;
+  margin: 0;
+  padding-left: 25px;
+  font-size: 14px;
+}
+
+.your-order>div{
+  padding: 15px 0; 
+}
+
+button{
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 30px;
+  color: #fff;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+button:hover{
+  cursor: pointer;
+  background: #428a7d;
+}
+
+/* Padding adjustment CSS */
+.custom-container {
+    padding: 0;
+    background: #f6f6f6;
+}
+
+/* error alerts */
+input.ng-invalid.ng-touched {
+    border: red 1px solid;
+}
+
+.custom-btn[disabled] {
+    cursor: not-allowed;
+}
+
+/* Style for the main container */
+.container-fluid {
+  padding: 20px;
+}
+
+/* Style for the headings */
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Style for the form labels */
+label {
+  font-weight: bold;
+}
+
+/* Style for form inputs */
+.form-control {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Style for radio buttons */
+input[type="radio"] {
+  margin-right: 5px;
+}
+
+/* Style for the order summary table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+th, td {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+table>thead>tr>th {
+  border-bottom: none;
+}
+
+/* Style for the Place Order button */
+.custom-btn {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.custom-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Custom columns */
+.custom-col1 {
+  padding-right: 10px;
+  padding-left: 0;
+}
+
+.custom-col2 {
+  padding-left: 10px;
+  padding-right: 0;
+}
+
+/* error & warning css */
+.error-message {
+  color: #f00; /* Red color for error text */
+  font-size: 14px;
+  margin-top: 5px;
+}

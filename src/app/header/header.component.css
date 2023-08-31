@@ -1,0 +1,22 @@
+.navbar-default {
+  box-shadow: 0 2px 4px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 8%);
+  background-color: #151414;
+  color: #fff;
+  border-radius: 0;
+  border-color: #151414;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:focus,
+.navbar-default .navbar-nav > .active > a:hover {
+  color: #ff5e14;
+  background-color: transparent;
+}
+
+.navbar-default .navbar-nav > li > a:focus,
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-header > a:hover {
+  color: #ff5e14;
+  background-color: transparent;
+}

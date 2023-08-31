@@ -1,0 +1,28 @@
+<div class="conatiner-fluid carousel">
+    <ul class="slides">
+        <ng-container *ngFor="let image of carouselImages; let i = index">
+            <input type="radio" name="radio-buttons" [id]="'img-' + (i + 1)" [(ngModel)]="selectedSlideIndex"
+                [value]="i" [ngClass]="{'checked-input': i === selectedSlideIndex}" />
+            <li class="slide-container">
+                <div class="slide-image">
+                    <img [src]="image.url">
+                    <!-- <div class="recipe-name">{{ image.name }}</div> Add this line -->
+                </div>
+                <div class="carousel-controls">
+                    <label [for]="'img-' + (i === 0 ? carouselImages.length : i)" class="prev-slide">
+                        <span>&lsaquo;</span>
+                    </label>
+                    <label [for]="'img-' + ((i + 2) % (carouselImages.length + 1))" class="next-slide">
+                        <span>&rsaquo;</span>
+                    </label>
+                </div>
+            </li>
+        </ng-container>
+        <div class="carousel-dots">
+            <ng-container *ngFor="let image of carouselImages; let i = index">
+                <label [for]="'img-' + (i + 1)" class="carousel-dot" [id]="'img-dot-' + (i + 1)"
+                    [ngClass]="{'active-dot': i === selectedSlideIndex}"></label>
+            </ng-container>
+        </div>
+    </ul>
+</div>

@@ -1,0 +1,50 @@
+<!-- <ng-template appPlaceholder></ng-template> -->
+<div class="container custom-container">
+    <div class="row content">
+        <div class="col-xs-12 col-md-4 col-md-offset-4">
+            <!-- simple error message -->
+            <div class="alert alert-danger" *ngIf="error">
+                <p>{{error}}</p>
+            </div>
+
+            <!-- alert box to display the error -->
+            <!-- <app-alert [message]="error" *ngIf="error" (close)="onHandleError()"></app-alert> -->
+            <!-- dynamic component creation for error handling -->
+
+            <div *ngIf="isLoading" style="text-align: center;">
+                <app-loading-spinner> </app-loading-spinner>
+            </div>
+            <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)" *ngIf="!isLoading">
+                <div class="form-group">
+                    <label for="email">E-Mail</label>
+                    <input type="email" id="email" class="form-control" ngModel name="email" required email />
+                    <div class="alert alert-danger"
+                        *ngIf="authForm.controls.email?.invalid && (authForm.controls.email?.dirty || authForm.controls.email?.touched)">
+                        <p *ngIf="authForm.controls.email?.errors?.required">Email is required.</p>
+                        <p *ngIf="authForm.controls.email?.errors?.email">Please enter a valid email address.</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" class="form-control" ngModel name="password" required
+                        minlength="6" />
+                    <div class="alert alert-danger"
+                        *ngIf="authForm.controls.password?.invalid && (authForm.controls.password?.dirty || authForm.controls.password?.touched)">
+                        <p *ngIf="authForm.controls.password?.errors?.required">Password is required.</p>
+                        <p *ngIf="authForm.controls.password?.errors?.minlength">Password must be at least 6 characters
+                            long.</p>
+                    </div>
+                </div>
+                <div>
+                    <button class="btn btn-success" type="submit" [disabled]="!authForm.valid">
+                        {{ isLoginMode ? 'Login' : 'Sign Up' }}
+                    </button>
+                    <button class="btn btn-primary" type="button" (click)="onSwitchMode()">
+                        Switch to {{ isLoginMode ? 'Sign Up' : 'Login' }}
+                    </button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>

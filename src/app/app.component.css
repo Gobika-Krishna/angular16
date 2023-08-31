@@ -1,0 +1,8 @@
+.custom-col {
+    position: inherit;
+}
+
+.custom-container {
+    padding: 0;
+    overflow-x: hidden;
+}
