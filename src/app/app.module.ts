@@ -21,6 +21,9 @@ import { SuccessModalComponent } from './success-modal/success-modal.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { TermsComponent } from './terms/terms.component';
 
+import { NgxStripeModule } from 'ngx-stripe';
+import { environment } from '../environments/environment';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,6 +48,7 @@ import { TermsComponent } from './terms/terms.component';
     FormsModule,
     BrowserAnimationsModule,
     MatDialogModule,
+    NgxStripeModule.forRoot(environment.stripe.publicKey),
   ],
 
   bootstrap: [AppComponent],
