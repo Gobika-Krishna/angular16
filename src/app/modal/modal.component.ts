@@ -12,6 +12,6 @@ export class ModalComponent {
 
   dismissModal() {
     this.isOpen = !this.isOpen;
-    this.router.navigate(['/recipes']);
+    this.router.navigate(['/products']);
   }
 }

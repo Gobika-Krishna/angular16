@@ -12,18 +12,6 @@ import { TermsComponent } from './terms/terms.component';
 const routes: Routes = [
   { path: '', redirectTo: '/auth', pathMatch: 'full' },
   {
-    path: 'recipes',
-    loadChildren: () =>
-      import('./recipes/recipes.module').then((m) => m.RecipesModule),
-  },
-  {
-    path: 'shoppinglist',
-    loadChildren: () =>
-      import('./shopping-list/shopping-list.module').then(
-        (m) => m.ShoppingListModule
-      ),
-  },
-  {
     path: '',
     loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
   },
