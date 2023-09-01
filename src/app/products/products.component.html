@@ -7,7 +7,7 @@
         </div>
         <div class="product col-xs-12 col-md-3" *ngFor="let product of products; let i = index">
             <div class="image-box">
-                <img [src]="product.url" alt="product.name" class="images img-responsive">
+                <img [src]="product.url" alt="product.name" class="images img-responsive" routerLink="/product-detail">
             </div>
             <div class="text-box">
                 <h2 class="item">{{product.name}}</h2>

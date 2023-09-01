@@ -23,6 +23,7 @@ import { TermsComponent } from './terms/terms.component';
 
 import { NgxStripeModule } from 'ngx-stripe';
 import { environment } from '../environments/environment';
+import { ProductDetailComponent } from './products/product-detail/product-detail.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { environment } from '../environments/environment';
     ContactUsComponent,
     SuccessModalComponent,
     TermsComponent,
+    ProductDetailComponent,
   ],
   imports: [
     BrowserModule,

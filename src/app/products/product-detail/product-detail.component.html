@@ -1,0 +1,29 @@
+<div class="container-fluid container-space">
+    <div class="row">
+        <div class="col-md-6">
+            <img style="width: 100%;" [src]="bannerImage" alt="" />
+            <div class="product-thumbnails">
+                <ul>
+                    <li *ngFor="let image of productImages; let index = index"
+                        [class.thumbnail-active]="activeClass === index"
+                        (click)="currentThumbnail(image.imageUrl, index)">
+                        <img [src]="image.imageUrl" alt="" />
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <h1>{{ productTitle }} - {{ productPrice }}</h1>
+            <h4 *ngIf="stockAvailability">Stock Available</h4>
+            <h4 *ngIf="!stockAvailability">Oops!! Out Of Stock</h4>
+            <h3>Details</h3>
+            <ul *ngFor="let detail of productChecks">
+                <li>{{ detail }}</li>
+            </ul>
+            <button type="button" class="btn btn-outline-primary btn-lg btn-block btn-custom-color"
+                (click)="addToCart()">
+                ADD TO CART
+            </button>
+        </div>
+    </div>
+</div>
